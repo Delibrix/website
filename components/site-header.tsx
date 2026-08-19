@@ -33,7 +33,7 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <Link href="/contact" className="btn-primary hidden md:inline-flex">
+          <Link href="/contact" className="btn-primary header-cta hidden md:inline-flex">
             Let&apos;s talk
           </Link>
         </div>
