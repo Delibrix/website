@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # SMTP_USER and SMTP_HOST are config values (not secrets) whose values
+  # appear as plain text in the contact page HTML — omit from scan.
+  SECRETS_SCAN_OMIT_KEYS = "SMTP_USER,SMTP_HOST"
