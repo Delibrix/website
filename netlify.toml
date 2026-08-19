@@ -3,6 +3,7 @@
   publish = ".next"
 
 [build.environment]
-  # SMTP_USER and SMTP_HOST are config values (not secrets) whose values
-  # appear as plain text in the contact page HTML — omit from scan.
-  SECRETS_SCAN_OMIT_KEYS = "SMTP_USER,SMTP_HOST"
+  # SMTP_PASS appears only in turbopack cache artifacts — also added to omit keys as belt-and-suspenders.
+  SECRETS_SCAN_OMIT_KEYS = "SMTP_USER,SMTP_HOST,SMTP_PASS,SMTP_PORT"
+  # Turbopack cache files are build artifacts never served to users.
+  SECRETS_SCAN_OMIT_PATHS = ".netlify/.next/cache"
